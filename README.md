@@ -20,7 +20,7 @@ llega al navegador.
 
 ## Tecnologías
 
-- **Frontend:** React 19, Vite, Tailwind CSS, lucide-react.
+- **Frontend:** React 19, Vite, Tailwind CSS v4, lucide-react, framer-motion.
 - **API:** Node.js ≥18 (sin dependencias), `fetch` nativo, Resend HTTP API.
 - **Anti-abuso:** honeypot + rate-limit por IP + validación estricta. Turnstile opcional.
 - **Despliegue:** Render (Blueprint `render.yaml`).
@@ -47,10 +47,11 @@ npm run dev              # http://localhost:5173
 
 ## Producción (Render)
 
-Conecta el repo y usa `render.yaml` (Blueprint). Crea dos servicios:
+Conecta el repo y usa `render.yaml` (Blueprint). Actualmente configura solo el frontend estático:
 
-1. **cv-frontend** (Static Site) — build `npm run build`, publica `dist/`.
-2. **cv-contact-api** (Web Service, Node) — raíz `api/`.
+- **hoja-de-vida-react** (Static Site) — build `npm install && npm run build`, publica `dist/`.
+
+Para la API de contacto, crea manualmente un **Web Service** en Render apuntando a la carpeta `api/`:
 
 Variables a definir en el panel de Render:
 
@@ -70,6 +71,22 @@ desactiva y siguen operando el honeypot y el rate-limit.
 ```
 src/components/   Componentes de la UI (Hero, About, Skills, Experience, Projects, Contact, Footer, Navbar)
 api/server.js     API de contacto (Node sin dependencias): valida + envía vía Resend
-public/           Recursos estáticos (foto-alejo.jpg, favicon, icons)
+public/           Recursos estáticos (foto-alejo.jpg, favicon: alejo1994.png, logo: alejoS.png, icons.svg)
 render.yaml       Blueprint de Render (frontend estático + API)
 ```
+
+## Comandos útiles
+
+```bash
+npm run dev        # Desarrollo frontend
+npm run build      # Build producción
+npm run lint       # Oxlint
+npm run preview    # Preview build local
+```
+
+## Recursos estáticos
+
+- **Favicon / Loader:** `public/alejo1994.png`
+- **Logo Navbar & Footer:** `public/alejo1994.png`
+- **Foto perfil Hero:** `public/foto-alejo.jpg`
+- **CV descargable:** `public/hoja_de_vida_alejandro_munoz.pdf`

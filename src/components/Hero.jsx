@@ -77,7 +77,7 @@ const Hero = () => {
                 Contáctame
               </a>
               <a
-                href="/hoja-de-vida.alejandro1.pdf"
+                href="/hoja_de_vida_alejandro_munoz.pdf"
                 download
                 className="inline-flex items-center justify-center px-6 py-4 rounded-2xl border border-indigo-300 dark:border-indigo-700 hover:border-indigo-500 dark:hover:border-indigo-500 text-indigo-600 dark:text-indigo-400 font-semibold hover:bg-indigo-50 dark:hover:bg-indigo-950/40 transition-all duration-300 transform hover:-translate-y-0.5"
               >
